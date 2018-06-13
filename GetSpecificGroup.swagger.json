@@ -1,0 +1,234 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Get a specific group",
+    "description": "Get a specific group using a filter"
+  },
+  "host": "graph.microsoft.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/beta/groups": {
+      "get": {
+        "summary": "Gets a sepcific group",
+        "description": "Get specific group using a filter",
+        "operationId": "GetGroupsID",
+        "parameters": [
+          {
+            "name": "$filter",
+            "default": "fields/displayname eq 'V17E1'",
+            "in": "query",
+            "type": "string",
+            "required": true,
+            "x-ms-summary": "$filter"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "description": "Content-Type",
+            "x-ms-summary": "Content-Type"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "@odata.context": {
+                  "type": "string",
+                  "description": "@odata.context",
+                  "x-ms-summary": "@odata.context"
+                },
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "id",
+                        "x-ms-summary": "id"
+                      },
+                      "deletedDateTime": {
+                        "type": "string",
+                        "description": "deletedDateTime",
+                        "x-ms-summary": "deletedDateTime"
+                      },
+                      "classification": {
+                        "type": "string",
+                        "description": "classification",
+                        "x-ms-summary": "classification"
+                      },
+                      "createdDateTime": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "createdDateTime",
+                        "x-ms-summary": "createdDateTime"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "description",
+                        "x-ms-summary": "description"
+                      },
+                      "displayName": {
+                        "type": "string",
+                        "description": "displayName",
+                        "x-ms-summary": "displayName"
+                      },
+                      "groupTypes": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "groupTypes",
+                        "x-ms-summary": "groupTypes"
+                      },
+                      "mail": {
+                        "type": "string",
+                        "description": "mail",
+                        "x-ms-summary": "mail"
+                      },
+                      "mailEnabled": {
+                        "type": "boolean",
+                        "description": "mailEnabled",
+                        "x-ms-summary": "mailEnabled"
+                      },
+                      "mailNickname": {
+                        "type": "string",
+                        "description": "mailNickname",
+                        "x-ms-summary": "mailNickname"
+                      },
+                      "membershipRule": {
+                        "type": "string",
+                        "description": "membershipRule",
+                        "x-ms-summary": "membershipRule"
+                      },
+                      "membershipRuleProcessingState": {
+                        "type": "string",
+                        "description": "membershipRuleProcessingState",
+                        "x-ms-summary": "membershipRuleProcessingState"
+                      },
+                      "onPremisesLastSyncDateTime": {
+                        "type": "string",
+                        "description": "onPremisesLastSyncDateTime",
+                        "x-ms-summary": "onPremisesLastSyncDateTime"
+                      },
+                      "onPremisesSecurityIdentifier": {
+                        "type": "string",
+                        "description": "onPremisesSecurityIdentifier",
+                        "x-ms-summary": "onPremisesSecurityIdentifier"
+                      },
+                      "onPremisesSyncEnabled": {
+                        "type": "string",
+                        "description": "onPremisesSyncEnabled",
+                        "x-ms-summary": "onPremisesSyncEnabled"
+                      },
+                      "preferredDataLocation": {
+                        "type": "string",
+                        "description": "preferredDataLocation",
+                        "x-ms-summary": "preferredDataLocation"
+                      },
+                      "preferredLanguage": {
+                        "type": "string",
+                        "description": "preferredLanguage",
+                        "x-ms-summary": "preferredLanguage"
+                      },
+                      "proxyAddresses": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "proxyAddresses",
+                        "x-ms-summary": "proxyAddresses"
+                      },
+                      "renewedDateTime": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "renewedDateTime",
+                        "x-ms-summary": "renewedDateTime"
+                      },
+                      "resourceBehaviorOptions": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "resourceBehaviorOptions",
+                        "x-ms-summary": "resourceBehaviorOptions"
+                      },
+                      "resourceProvisioningOptions": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "resourceProvisioningOptions",
+                        "x-ms-summary": "resourceProvisioningOptions"
+                      },
+                      "securityEnabled": {
+                        "type": "boolean",
+                        "description": "securityEnabled",
+                        "x-ms-summary": "securityEnabled"
+                      },
+                      "theme": {
+                        "type": "string",
+                        "description": "theme",
+                        "x-ms-summary": "theme"
+                      },
+                      "visibility": {
+                        "type": "string",
+                        "description": "visibility",
+                        "x-ms-summary": "visibility"
+                      },
+                      "onPremisesProvisioningErrors": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "onPremisesProvisioningErrors",
+                        "x-ms-summary": "onPremisesProvisioningErrors"
+                      }
+                    }
+                  },
+                  "description": "value",
+                  "x-ms-summary": "value"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "oauth2_auth": {
+      "type": "oauth2",
+      "flow": "accessCode",
+      "authorizationUrl": "https://login.windows.net/common/oauth2/authorize",
+      "tokenUrl": "https://login.microsoftonline.com/roctop.onmicrosoft.com/oauth2/v2.0/token",
+      "scopes": {
+        "Group.ReadWrite.All": "Group.ReadWrite.All"
+      }
+    }
+  },
+  "security": [
+    {
+      "oauth2_auth": [
+        "Group.ReadWrite.All"
+      ]
+    }
+  ],
+  "tags": []
+}
