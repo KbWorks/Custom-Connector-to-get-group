@@ -1,0 +1,139 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "add member or owner to teams",
+    "description": "add member or owner to teams"
+  },
+  "host": "graph.microsoft.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/beta/groups/{0}/members/$ref": {},
+    "/beta/groups/{GroupId}/members/$ref": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "summary": "Add Member to team",
+        "operationId": "AddMemberToTeam",
+        "parameters": [
+          {
+            "name": "GroupId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-type",
+            "in": "header",
+            "required": false,
+            "type": "string",
+            "default": "application/json"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "@odata.id": {
+                  "type": "string",
+                  "description": "@odata.id",
+                  "title": "",
+                  "x-ms-visibility": "",
+                  "default": "https://graph.microsoft.com/beta/directoryObjects/{UserId}"
+                }
+              }
+            }
+          }
+        ],
+        "description": "Add Member to Teams"
+      }
+    },
+    "/beta/groups/{GroupId}/owners/$ref": {},
+    "/beta/groups/{GroupId}/Owners/$ref": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "summary": "AddOwnerToTeam",
+        "description": "Add a Owner To a team",
+        "operationId": "AddOwnerTeam",
+        "parameters": [
+          {
+            "name": "GroupId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Content-type",
+            "in": "header",
+            "required": false,
+            "type": "string",
+            "default": "Application/json"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "@odata.id": {
+                  "type": "string",
+                  "description": "@odata.id",
+                  "title": "",
+                  "x-ms-visibility": "",
+                  "default": "https://graph.microsoft.com/beta/directoryObjects/{UserId}"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "oauth2_auth": {
+      "type": "oauth2",
+      "flow": "accessCode",
+      "authorizationUrl": "https://login.windows.net/common/oauth2/authorize",
+      "tokenUrl": "https://login.windows.net/common/oauth2/authorize",
+      "scopes": {
+        "Group.ReadWrite.All": "Group.ReadWrite.All",
+        "Directory.ReadWrite.All": "Directory.ReadWrite.All"
+      }
+    }
+  },
+  "security": [
+    {
+      "oauth2_auth": [
+        "Group.ReadWrite.All",
+        "Directory.ReadWrite.All"
+      ]
+    }
+  ],
+  "tags": []
+}
